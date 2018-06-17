@@ -10,7 +10,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { findUrl } from './services/applicationService';
 import { findRegistryData } from './services/registryService';
-import { Registry } from './entities/Registry';
+import { RegistryCollection } from './entities/RegistryCollection';
 
 interface Props {
     appId: string,
@@ -21,7 +21,7 @@ interface Props {
 interface State {
     tabIndex: number,
     baseUrl: string,
-    registryData: Registry,
+    registryData: RegistryCollection,
     appId: string,
     targetId: string
 }

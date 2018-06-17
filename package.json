@@ -10,6 +10,7 @@
     "react-redux": "^5.0.7",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "redux-logger": "^3.0.6",
     "react-tabs": "2.1.1",
     "nomnoml": "^0.2.0",
     "dateformat": "^3.0.3"
@@ -27,6 +28,7 @@
     "@types/react-dom": "^16.0.5",
     "@types/react-router-dom": "^4.2.6",
     "@types/react-redux": "^6.0.2",
+    "@types/redux-logger": "^3.0.6",
     "@types/react-tabs": "^1.0.4",
     "@types/dateformat": "^1.0.1",
     "typescript": "^2.8.3"

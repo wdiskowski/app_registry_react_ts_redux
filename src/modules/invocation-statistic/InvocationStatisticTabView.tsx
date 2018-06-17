@@ -4,7 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import InvocationStatistic from './InvocationStatistic';
 import { InvocationStatisticData } from './entities/InvocationStatisticData';
 import { findSlowest, findExceptional } from './invocationStatisticService';
-import { Monitoring } from '../../entities/Monitoring';
+import { Monitoring } from './entities/Monitoring';
 
 interface Props {
     appId: string,

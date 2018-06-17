@@ -5,7 +5,7 @@ import { Application } from "../entities/Application";
 
 
 
-const applicationsConfigUrl: string = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + "/ApplicationRegistryWeb/rest/registry";
+const applicationsConfigUrl: string = window.location.protocol + '//' + window.location.hostname + (window.location.port ? ':' + window.location.port : '') + "/ApplicationsRegistryWeb/rest/registry";
 
 let applicationsCached: Application[] = [];
 

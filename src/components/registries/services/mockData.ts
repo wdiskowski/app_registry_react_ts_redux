@@ -1,6 +1,6 @@
-import { RegistryCollection } from "../entities/RegistryCollection";
+import { RegistryCollection } from "../../../entities/RegistryCollection";
 
-const registryDataAll: RegistryCollection =
+const registriesDataAll: RegistryCollection =
 
     {
         releaseInfo: "/release-info",
@@ -15,7 +15,7 @@ const registryDataAll: RegistryCollection =
         }
     };
 
-const registryDataPart: RegistryCollection =
+const registriesDataPart: RegistryCollection =
     {
         releaseInfo: "/release-info",
         configInfo: "/config-info",
@@ -27,7 +27,6 @@ const registryDataPart: RegistryCollection =
         }
     };
 
-export function findRegistryDataMock(url: string): RegistryCollection {
-    return url.indexOf("px092vm") > -1 ? registryDataPart : registryDataAll;
+export const fetchMockData = (url: string): RegistryCollection => {
+    return url.indexOf("px092vm") > -1 ? registriesDataPart : registriesDataAll;
 }
-
