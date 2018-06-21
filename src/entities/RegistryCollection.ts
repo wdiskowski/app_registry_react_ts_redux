@@ -1,3 +1,4 @@
+import {Monitoring} from "./Monitoring";
 
 export interface RegistryCollection {
     releaseInfo: string,
@@ -6,8 +7,5 @@ export interface RegistryCollection {
     classDiagramm?: string,
     interfaceInfo?: string,
     logInfo?: string,
-    monitoringInfo?: {
-        slowest: string,
-        exceptional: string
-    }
+    monitoringInfo?: Monitoring
 }

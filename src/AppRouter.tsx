@@ -1,9 +1,10 @@
 import React from "react";
-import { Router } from "react-router-dom";
+import { Router, Route } from "react-router-dom";
 import { Provider } from 'react-redux';
 import { store } from './store';
 import { createBrowserHistory as createHistory } from 'history'
-import {ApplicationsContailner} from './components/applications';
+import { ApplicationsContainer } from './components/applications';
+import { RegistriesContainer } from './components/registries';
 
 import './resources/css/index.css';
 import './resources/css/w3.css';
@@ -17,9 +18,11 @@ export const AppRouter: React.StatelessComponent<{}> = () => {
         return (
                 <Provider store={store}>
                         <Router history={history}>
-                                <div>
-                                        <ApplicationsContailner sideWidth={SIDEBAR_WIDTH} />
-                                 </div>
+                                <>
+                                        <Route path="/" render={() => <ApplicationsContainer sideWidth={SIDEBAR_WIDTH} />} />
+                                        <Route path="/ApplicationsRegistryWeb/secure/:appId/:targetId" render={() =>
+                                                <RegistriesContainer sideWidth={SIDEBAR_WIDTH} />} />
+                                </>
                         </Router>
                 </Provider>
         )

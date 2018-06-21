@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     targetSelected: (target: Target) => dispatch(selectAppTarget(target))
 });
 
-export const ApplicationsContailner = connect(
+export const ApplicationsContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
 )(Applications);
