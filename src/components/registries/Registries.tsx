@@ -30,7 +30,7 @@ export class Registries extends React.Component<Props, {}> {
                         <Tab disabled={!this.props.registriesData || !this.props.registriesData.monitoringInfo}>Invocation Statistic</Tab>
                         <Tab disabled={!this.props.registriesData || !this.props.registriesData.erDiagramm}>ER Diagramm</Tab>
                         <Tab disabled={!this.props.registriesData || !this.props.registriesData.classDiagramm}>Class Diagramm</Tab>
-                        <sup >{this.props.activeApp && this.props.activeTarget ? `${this.props.activeApp.name} (${this.props.activeTarget.name})` : ''}</sup>
+                        <sup >{this.props.activeTarget ? `${this.props.activeTarget.applicationName} (${this.props.activeTarget.name})` : ''}</sup>
                     </TabList>
                     <TabPanel>
                         <ReleaseInfoContainer />

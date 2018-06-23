@@ -14,7 +14,9 @@ export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeT
         activeApp.targets.map(
             target =>
                 <Link key={target.name} to={`/ApplicationsRegistryWeb/secure/${activeApp.name}/${target.name}`}
-                    className={`w3-bar-item w3-button ${activeTarget && target.name === activeTarget.name ?
+                    className={`w3-bar-item w3-button ${activeTarget 
+                        && target.name === activeTarget.name 
+                        && activeTarget.applicationName === activeApp.name ?
                         'w3-light-blue' : 'w3-white'}`}
                     onClick={() => targetSelected(target)}
                 >{target.name}
