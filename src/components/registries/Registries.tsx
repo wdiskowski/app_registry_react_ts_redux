@@ -5,6 +5,7 @@ import { Application } from '../../entities/Application';
 import { Target } from '../../entities/Target';
 import { RegistryCollection } from '../../entities/RegistryCollection';
 import { ReleaseInfoContainer } from '../modules/release-info';
+import { ConfigInfoContainer } from '../modules/config-info';
 
 interface Props {
     sideWidth: number,
@@ -35,11 +36,8 @@ export class Registries extends React.Component<Props, {}> {
                     <TabPanel>
                         <ReleaseInfoContainer />
                     </TabPanel>
-                    <TabPanel>2
-                        {/* 
-                        <ConfigInfoTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.configInfo ? this.state.registriesData.configInfo : '')} />
-                        */}
+                    <TabPanel>
+                        <ConfigInfoContainer />
                     </TabPanel>
                     <TabPanel>3
                         {/* 
