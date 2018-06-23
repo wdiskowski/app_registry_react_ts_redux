@@ -17,14 +17,6 @@ const fetchData = (): Promise<Application[]> => {
     }
 }
 
-const findByName = (appName: string): Promise<Application | null> => {
-    return fetchData().then(apps => {
-        const filtered = apps.filter(app => app.name === appName);
-        return filtered.length > 0 ? filtered[0] : null;
-    });
-}
-
 export const applicationService = {
-    fetchData,
-    findByName
+    fetchData
 }

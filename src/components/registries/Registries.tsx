@@ -4,6 +4,7 @@ import 'react-tabs/style/react-tabs.css';
 import { Application } from '../../entities/Application';
 import { Target } from '../../entities/Target';
 import { RegistryCollection } from '../../entities/RegistryCollection';
+import { ReleaseInfoContainer } from '../modules/release-info';
 
 interface Props {
     sideWidth: number,
@@ -31,11 +32,8 @@ export class Registries extends React.Component<Props, {}> {
                         <Tab disabled={!this.props.registriesData || !this.props.registriesData.classDiagramm}>Class Diagramm</Tab>
                         <sup >{this.props.activeApp && this.props.activeTarget ? `${this.props.activeApp.name} (${this.props.activeTarget.name})` : ''}</sup>
                     </TabList>
-                    <TabPanel>1
-                        {/* 
-                        <ReleaseInfoTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.releaseInfo ? this.state.registriesData.releaseInfo : '')} />
-                        */}
+                    <TabPanel>
+                        <ReleaseInfoContainer />
                     </TabPanel>
                     <TabPanel>2
                         {/* 
@@ -76,10 +74,6 @@ export class Registries extends React.Component<Props, {}> {
                 </Tabs>
             </div>
         )
-    }
-
-    componentDidUpdate() {
-        if (this.props.activeTarget) { this.props.fetchRegistries(this.props.activeTarget) };
     }
 
     componentDidMount() {

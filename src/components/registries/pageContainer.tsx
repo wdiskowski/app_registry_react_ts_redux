@@ -8,7 +8,7 @@ import { Target } from "../../entities/Target";
 const mapStateToProps = (state: State) => ({
     activeApp: state.activeApp,
     activeTarget: state.activeTarget,
-    activeRegistryIndex: state.activeRegistryIndex,
+    activeRegistryIndex: state.activeRegistry ? state.activeRegistry.index : 0,
     registriesData: state.registryCollection
 });
 
