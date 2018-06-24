@@ -1,6 +1,6 @@
 import React from 'react';
 import { abbreviate } from '../../../utils/StringUtils';
-import { MapEntry } from './entities/MapEntry';
+import { MapEntry } from '../../../entities/MapEntry';
 
 
 

@@ -1,5 +1,5 @@
 import dateformat from 'dateformat';
-import { MapEntry } from "../../common/entities/MapEntry";
+import { MapEntry } from "../../../../entities/MapEntry";
 import { NamedMap } from "../../common/entities/NamedMap";
 import { Release } from "../entities/Release";
 import { convertToNamedMapArray } from "../../common/utils/namedMapConverter";

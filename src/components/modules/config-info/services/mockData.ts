@@ -1,4 +1,4 @@
-import { MapEntry } from "../../common/entities/MapEntry";
+import { MapEntry } from "../../../../entities/MapEntry";
 import { NamedMap } from "../../common/entities/NamedMap";
 import { Config } from "../entities/Config";
 

@@ -2,7 +2,6 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { MapExposure } from './MapExposure';
-import { RegistryCollection } from "../../../entities/RegistryCollection";
 import { Target } from "../../../entities/Target";
 import { Registry } from "../../../entities/Registry";
 import { NamedMap } from "./entities/NamedMap";
@@ -10,20 +9,20 @@ import { sort } from '../../../utils/PropertySorter';
 
 interface Props {
     activeTarget: Target,
-    registryCollection: RegistryCollection,
+    registryUrl: string,
     activeRegistry: Registry,
-    fetchData: (target: Target, registryCollection: RegistryCollection) => void
+    fetchData: (target: Target, registryUrl: string) => void
 };
 export class MapsExposure extends React.Component<Props, {}> {
     public componentDidMount() {
-        if (this.props.registryCollection) {
-            this.props.fetchData(this.props.activeTarget, this.props.registryCollection);
+        if (this.props.registryUrl) {
+            this.props.fetchData(this.props.activeTarget, this.props.registryUrl);
         }
     }
 
     public componentDidUpdate() {
-        if (this.props.registryCollection && this.props.activeRegistry.data.length === 0) {
-            this.props.fetchData(this.props.activeTarget, this.props.registryCollection);
+        if (this.props.registryUrl && this.props.activeRegistry.data.length === 0) {
+            this.props.fetchData(this.props.activeTarget, this.props.registryUrl);
         }
     }
 

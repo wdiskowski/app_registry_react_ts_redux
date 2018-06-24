@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
 import { Application } from '../entities/Application';
+import { MapEntry } from '../entities/MapEntry';
 import { Target } from '../entities/Target';
-import { RegistryCollection } from '../entities/RegistryCollection';
 import { Registry } from '../entities/Registry';
 import { applicationReducer } from './application';
 import { applicationsReducer } from './applications';
@@ -15,7 +15,7 @@ export interface State {
     activeApp: Application | null;
     activeTarget: Target | null;
     activeRegistry: Registry | null;
-    registryCollection: RegistryCollection | null;
+    registryCollection: Array<MapEntry<string>>;
 };
 
 export const state = combineReducers<State>({

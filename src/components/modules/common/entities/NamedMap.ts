@@ -1,4 +1,4 @@
-import { MapEntry } from "./MapEntry";
+import { MapEntry } from '../../../../entities/MapEntry';
 
 export interface NamedMap {
     name?: string,

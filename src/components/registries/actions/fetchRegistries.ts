@@ -1,5 +1,5 @@
 import { ActionType } from '../../../constants/ActionType';
-import { RegistryCollection } from "../../../entities/RegistryCollection";
+import { MapEntry } from "../../../entities/MapEntry";
 import { Target } from "../../../entities/Target";
 import { registryService } from '../services';
 
@@ -10,7 +10,7 @@ export const fetchRegistries = (target: Target) => (dispatch: any) => {
     });
 };
 
-const fetchRegistriesCompleted = (registries: RegistryCollection | null) => ({
+const fetchRegistriesCompleted = (registries: Array<MapEntry<string>>) => ({
   type: ActionType.FETCH_REGISTIES_COMPLETED,
   payload: registries,
 });

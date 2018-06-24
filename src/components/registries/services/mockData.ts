@@ -1,4 +1,5 @@
 import { RegistryCollection } from "../../../entities/RegistryCollection";
+import { MapEntry } from "../../../entities/MapEntry";
 
 const registriesDataAll: RegistryCollection =
 
@@ -14,6 +15,29 @@ const registriesDataAll: RegistryCollection =
             exceptional: "/monitoring-info/exceptional"
         }
     };
+const registriesDataAll2: Array<MapEntry<string>> = [
+    {
+        key: 'Release Info', value: '/release-info'
+    },
+    {
+        key: 'Config Info', value: '/config-info'
+    },
+    {
+        key: 'Log Info', value: '/log-info'
+    },
+    {
+        key: 'Interface Info', value: '/interface-info'
+    },
+    {
+        key: 'Invocation Statistic', value: '/monitoring-info'
+    },
+    {
+        key: 'ER Diagramm', value: '/er-diagramm'
+    },
+    {
+        key: 'Class Diagramm', value: '/class-diagramm'
+    }
+];
 
 const registriesDataPart: RegistryCollection =
     {
@@ -27,6 +51,7 @@ const registriesDataPart: RegistryCollection =
         }
     };
 
-export const fetchMockData = (url: string): RegistryCollection => {
-    return url.indexOf("px092vm") > -1 ? registriesDataPart : registriesDataAll;
+export const fetchMockData = (url: string): Array<MapEntry<string>> | RegistryCollection => {
+    return url.indexOf("px092vm") > -1 ? registriesDataPart :
+        url.indexOf("tx092vm") > -1 ? registriesDataAll2 : registriesDataAll;
 }

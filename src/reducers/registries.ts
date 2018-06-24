@@ -1,14 +1,14 @@
 import { ActionType } from '../constants/ActionType';
-import { RegistryCollection } from '../entities/RegistryCollection';
+import { MapEntry } from '../entities/MapEntry';
 
-export const registriesReducer = (state: RegistryCollection | null, action: any) => {
+export const registriesReducer = (state: Array<MapEntry<string>>, action: any) => {
   switch (action.type) {
     case ActionType.FETCH_REGISTIES_COMPLETED:
       return handleFetchRegistriesCompleted(state, action.payload);
   }
-  return state ? state : null;
+  return state ? state : [];
 };
 
-const handleFetchRegistriesCompleted = (state: RegistryCollection | null, payload: RegistryCollection) => {
+const handleFetchRegistriesCompleted = (state: Array<MapEntry<string>>, payload: Array<MapEntry<string>>) => {
   return payload;
 };

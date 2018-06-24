@@ -2,73 +2,34 @@ import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Application } from '../../entities/Application';
+import { MapEntry } from "../../entities/MapEntry";
 import { Target } from '../../entities/Target';
-import { RegistryCollection } from '../../entities/RegistryCollection';
-import { ReleaseInfoContainer } from '../modules/release-info';
-import { ConfigInfoContainer } from '../modules/config-info';
+import { modulExists, getComponent } from '../modules/common/utils/componentFactory';
+
 
 interface Props {
     sideWidth: number,
     activeApp: Application | null,
     activeTarget: Target | null,
     activeRegistryIndex: number,
-    registriesData: RegistryCollection | null,
+    registriesData: Array<MapEntry<string>>,
     fetchRegistries: (activeTarget: Target) => void,
     registrySelected: (registryIndex: number) => void
 };
 
 export class Registries extends React.Component<Props, {}> {
     render() {
+        const header = this.props.registriesData.map(entry => modulExists(entry.key) ? <Tab key={entry.key}>{entry.key}</Tab> : '');
+        const body = this.props.registriesData.map(entry => modulExists(entry.key) ? <TabPanel key={entry.key}> {getComponent(entry.key)} </TabPanel> : '');
         return (
             <div style={{ marginLeft: this.props.sideWidth }}>
                 <Tabs selectedTabClassName='w3-light-blue' selectedIndex={this.props.activeRegistryIndex}
                     onSelect={(tabIndex: number) => this.props.registrySelected(tabIndex)}>
                     <TabList>
-                        <Tab>Release Info</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.configInfo}>Config Info</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.logInfo}>Log Info</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.interfaceInfo}>Interface Info</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.monitoringInfo}>Invocation Statistic</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.erDiagramm}>ER Diagramm</Tab>
-                        <Tab disabled={!this.props.registriesData || !this.props.registriesData.classDiagramm}>Class Diagramm</Tab>
+                        {header}
                         <sup >{this.props.activeTarget ? `${this.props.activeTarget.applicationName} (${this.props.activeTarget.name})` : ''}</sup>
                     </TabList>
-                    <TabPanel>
-                        <ReleaseInfoContainer />
-                    </TabPanel>
-                    <TabPanel>
-                        <ConfigInfoContainer />
-                    </TabPanel>
-                    <TabPanel>3
-                        {/* 
-                        <LogInfoTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.logInfo ? this.state.registriesData.logInfo : '')} />
-                        */}
-                    </TabPanel>
-                    <TabPanel>4
-                        {/* 
-                        <InterfaceInfoTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.interfaceInfo ? this.state.registriesData.interfaceInfo : '')} />
-                        */}
-                    </TabPanel>
-                    <TabPanel>5
-                        {/* 
-                        <InvocationStatisticTabView appId={this.props.appId} targetId={this.props.targetId}
-                            baseUrl={this.state.baseUrl} relativePath={(this.state.registriesData.monitoringInfo ? this.state.registriesData.monitoringInfo : {slowest: '', exceptional: ''})} />
-                        */}
-                    </TabPanel>
-                    <TabPanel>6
-                        {/* 
-                        <ErDiagrammTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.erDiagramm ? this.state.registriesData.erDiagramm : "")} />
-                        */}
-                    </TabPanel>
-                    <TabPanel>7
-                        {/* 
-                        <ClassDiagrammTabView appId={this.props.appId} targetId={this.props.targetId}
-                            url={this.state.baseUrl + (this.state.registriesData.classDiagramm ? this.state.registriesData.classDiagramm : "")} />
-                        */}
-                    </TabPanel>
+                    {body}
                 </Tabs>
             </div>
         )

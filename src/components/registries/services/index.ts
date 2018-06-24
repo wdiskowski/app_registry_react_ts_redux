@@ -1,10 +1,11 @@
 import { fetchMockData } from "./mockData";
 import { commonAPI } from "../../../api/common"
-import { RegistryCollection } from "../../../entities/RegistryCollection";
+import { MapEntry } from "../../../entities/MapEntry";
 import { Target } from "../../../entities/Target";
+import { convert } from "../utils/registriesConverter";
 
-const fetchData = (target: Target): Promise<RegistryCollection | null> => {
-    return commonAPI.fetchData(target.url, fetchMockData);
+const fetchData = (target: Target): Promise<Array<MapEntry<string>>> => {
+    return commonAPI.fetchData(target.url, fetchMockData).then(releaseData => convert(releaseData));;
 }
 
 export const registryService = {
