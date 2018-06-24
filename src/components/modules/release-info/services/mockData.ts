@@ -1,3 +1,5 @@
+import { MapEntry } from "../../common/entities/MapEntry";
+import { NamedMap } from "../../common/entities/NamedMap";
 import { Release } from "../entities/Release";
 
 const releaseInfoData: Release =
@@ -23,7 +25,7 @@ const releaseInfoMultiData: Release[] =
 
     ];
 
-export const fetchMockData = (url: string): Release | Release[] => {
+export const fetchMockData = (url: string): Array<MapEntry<string>> | NamedMap | NamedMap[] | Release | Release[] | null => {
     return url.indexOf("ex092vm") > -1 ? releaseInfoData : releaseInfoMultiData;
 }
 

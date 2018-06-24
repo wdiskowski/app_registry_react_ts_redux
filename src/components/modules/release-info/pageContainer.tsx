@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { State } from '../../../reducers';
 import { fetchData } from './actions/fetchData';
-import { ReleaseInfos } from './ReleaseInfos';
+import { MapsExposure } from '../common/MapsExposure';
 import { Target } from "../../../entities/Target";
 import { RegistryCollection } from "../../../entities/RegistryCollection";
 
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch: any) => ({
 export const ReleaseInfoContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ReleaseInfos);
+)(MapsExposure);
