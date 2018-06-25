@@ -8,7 +8,7 @@ import { convert } from "../utils/configConverter";
 
 const fetchData = (target: Target, registryUrl: string): Promise<NamedMap[]> => {
         return commonAPI.fetchData(target.url + registryUrl, fetchMockData)
-            .then(releaseData => convert(releaseData));
+            .then(configData => convert(configData));
 }
 
 export const services = {
