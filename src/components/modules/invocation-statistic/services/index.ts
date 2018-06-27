@@ -8,7 +8,7 @@ import { NamedInvocationStatistic } from "../entities/NamedInvocationStatistic";
 
 const fetchData = (target: Target, registryUrl: string): Promise<NamedInvocationStatistic[]> => {
         return commonAPI.fetchData(target.url + registryUrl, fetchMockData)
-            .then(releaseData => convert(releaseData));
+            .then(invocationData => convert(invocationData));
 }
 
 export const services = {

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { State } from '../../../reducers';
 import { fetchData } from './actions/fetchData';
-import { InvocationStatistics } from './InvocationStatistics';
+import { ErDiagramms } from './ErDiagramms';
 import { Target } from "../../../entities/Target";
 import { mapGet } from "../../../utils/mapUtils";
 
@@ -19,7 +19,7 @@ const mapDispatchToProps = (dispatch: any) => ({
     fetchData: (target: Target, registryUrl: string) => dispatch(fetchData(target, registryUrl))
 });
 
-export const InvocationStatisticContainer = connect(
+export const ERDiagrammContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(InvocationStatistics);
+)(ErDiagramms);
