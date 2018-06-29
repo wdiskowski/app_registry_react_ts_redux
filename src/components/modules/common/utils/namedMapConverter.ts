@@ -4,7 +4,7 @@ import { convertToArray } from "../../../../utils/arrayConverter";
 
 export const convertToNamedMapArray = (input: Array<MapEntry<string>> | NamedMap[] | NamedMap | null): NamedMap[] => {
     if (isSimpleMap(input)) {
-        return [{name: 'Data', mapData: input}];
+        return [{name: 'Data', data: input}];
     } else {
         return convertToArray(input);
     }

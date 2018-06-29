@@ -6,9 +6,9 @@ import { convertToNamedMapArray } from "../../common/utils/namedMapConverter";
 
 export function convert(input: Array<MapEntry<string>> | NamedMap | NamedMap[] | Config | Config[] | null): NamedMap[] {
     if (isConfig(input)) {
-        return [{ name: input.name ? input.name : 'Config', mapData: input.configInfoData }];
+        return [{ name: input.name ? input.name : 'Config', data: input.configInfoData }];
     } else if (isConfigArray(input)) {
-        return input.map<NamedMap>((config, index) => ({ name: config.name ? config.name : 'Config ' + index, mapData: config.configInfoData }));
+        return input.map<NamedMap>((config, index) => ({ name: config.name ? config.name : 'Config ' + index, data: config.configInfoData }));
     } else {
         return convertToNamedMapArray(input);
     }

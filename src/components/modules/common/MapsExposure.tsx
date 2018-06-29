@@ -7,7 +7,7 @@ import { AbstractMultidataExposure } from "./AbstractMultidataExposure";
 
 export class MapsExposure extends AbstractMultidataExposure<NamedMap> {
 
-    protected createDataComponent(data: NamedMap | null): JSX.Element {
-        return <MapExposure mapEntries={data ? sort(data.mapData, 'key') : []} />;
+    protected createDataComponent(namedData: NamedMap | null): JSX.Element {
+        return <MapExposure mapEntries={namedData ? sort(namedData.data, 'key') : []} />;
     }
  }

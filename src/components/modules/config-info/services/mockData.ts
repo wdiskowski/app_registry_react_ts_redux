@@ -14,14 +14,14 @@ const configInfoMultiData: NamedMap[] =
     [
         {
             name: "MEV",
-            mapData: [
+            data: [
                 { key: "SERVICE_PASSWORD", value: "***me9" },
                 { key: "MEV_WSDL", value: "http://mev.ad49.dir/ExterneService/WebService?wsdl" }
             ]
         },
         {
             name: "PDB",
-            mapData: [
+            data: [
                 { key: "SERVICE_PASSWORD", value: "***pd9" },
                 { key: "PDB_WSDL", value: "http://pdb.ad49.dir/ExterneService/WebService?wsdl" }
             ]

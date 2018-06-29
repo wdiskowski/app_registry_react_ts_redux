@@ -6,9 +6,9 @@ import { convertToNamedMapArray } from "../../common/utils/namedMapConverter";
 
 export function convert(input: Array<MapEntry<string>> | NamedMap | NamedMap[] | Log | Log[] | null): NamedMap[] {
     if (isLog(input)) {
-        return [{ name: input.name ? input.name : 'Log', mapData: input.logInfoData }];
+        return [{ name: input.name ? input.name : 'Log', data: input.logInfoData }];
     } else if (isLogArray(input)) {
-        return input.map<NamedMap>((log, index) => ({ name: log.name ? log.name : 'Log ' + index, mapData: log.logInfoData }));
+        return input.map<NamedMap>((log, index) => ({ name: log.name ? log.name : 'Log ' + index, data: log.logInfoData }));
     } else {
         return convertToNamedMapArray(input);
     }

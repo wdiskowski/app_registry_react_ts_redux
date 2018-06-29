@@ -27,7 +27,7 @@ function isReleaseArray(data: Array<MapEntry<string>> | NamedMap | NamedMap[] | 
 function convertReleaseToNamedMap(release: Release): NamedMap {
     return {
         name: release.projekt,
-        mapData: [
+        data: [
             {
                 key: 'projekt',
                 value: release.projekt
