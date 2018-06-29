@@ -27,7 +27,7 @@ const statisticData: InvocationStatisticData[] =
 const statisticMultiData: NamedInvocationStatistic[] = [
     {
         name: 'Slowest',
-        invocationData: [
+        data: [
             {
                 methodName: "public void de.deltalloyd.mev.fran.orchestration.suche.FranPartnerDialogSucheService.aktualisierePartnerModelDaten(de.deltalloyd.mev.fran.model.FranPartnerViewModel) throws de.deltalloyd.mev.exception.MevApplicationException",
                 recentDuration: 230,
@@ -51,7 +51,7 @@ const statisticMultiData: NamedInvocationStatistic[] = [
     },
     {
         name: 'Exceptional',
-        invocationData: [
+        data: [
             {
                 methodName: "public void de.deltalloyd.mev.fran.orchestration.suche.FranPartnerDialogSucheService.aktualisierePartnerModelDaten(de.deltalloyd.mev.fran.model.FranPartnerViewModel) throws de.deltalloyd.mev.exception.MevApplicationException",
                 recentDuration: 230,

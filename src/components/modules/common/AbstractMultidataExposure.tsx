@@ -52,5 +52,5 @@ export abstract class AbstractMultidataExposure<T extends NamedData> extends Rea
                 </Tabs>);
     }
 
-    protected abstract createDataComponent(data: T | null): JSX.Element;
+    protected abstract createDataComponent(namedData: T | null): JSX.Element;
 }

@@ -5,7 +5,7 @@ import { AbstractMultidataExposure } from "../common/AbstractMultidataExposure";
 
 export class InvocationStatistics extends AbstractMultidataExposure<NamedInvocationStatistic> {
 
-    protected createDataComponent(data: NamedInvocationStatistic | null): JSX.Element {
-        return <InvocationStatistic invocations={data ? data.invocationData : []} />;
+    protected createDataComponent(namedData: NamedInvocationStatistic | null): JSX.Element {
+        return <InvocationStatistic invocations={namedData ? namedData.data : []} />;
     }
 }

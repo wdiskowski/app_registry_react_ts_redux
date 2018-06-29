@@ -4,7 +4,7 @@ import { NamedInvocationStatistic } from "../entities/NamedInvocationStatistic";
 
 export function convert(input: InvocationStatisticData[] | NamedInvocationStatistic[] | null): NamedInvocationStatistic[] {
     if (isInvocationStatisticDataArray(input)) {
-        return [{ name: 'Invocation Statistic', invocationData: input }];
+        return [{ name: 'Invocation Statistic', data: input }];
     } else if (isNamedInvocationStatisticArray(input)) {
         return input;
     } else {
