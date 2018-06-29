@@ -17,8 +17,8 @@ export class InvocationStatistic extends React.Component<Props, {}> {
 
 
     render() {
-
-        const body: any = this.props.invocations.map(
+        const invocations = this.props.invocations ? this.props.invocations : [];
+        const body: any = invocations.map(
             monitoringItem =>
                 (
                     <tr key={monitoringItem.methodName}>
