@@ -39,4 +39,7 @@ export class Registries extends React.Component<Props, {}> {
         if (this.props.activeTarget) { this.props.fetchRegistries(this.props.activeTarget) };
     }
 
+    componentDidUpdate() {
+        if (this.props.activeTarget && this.props.registriesData.length === 0) { this.props.fetchRegistries(this.props.activeTarget) };
+    }
 }

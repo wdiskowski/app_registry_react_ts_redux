@@ -7,6 +7,7 @@ import { AbstractMultidataExposure } from "../common/AbstractMultidataExposure";
 export class InterfaceInfos extends AbstractMultidataExposure<NamedInterface> {
 
     protected createDataComponent(data: NamedInterface | null): JSX.Element {
+
         return <InterfaceInfo interfaceItems={data ? sort(data.interfaceInfoData, 'name') : []} />;
     }
 }
