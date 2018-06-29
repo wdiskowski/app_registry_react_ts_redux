@@ -1,1 +1,0 @@
-type FetchCallback = (json: any) => void;
