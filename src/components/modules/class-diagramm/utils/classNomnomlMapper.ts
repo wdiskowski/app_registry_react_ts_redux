@@ -23,11 +23,15 @@ function drawClasses(classes: ClassData[]): string {
 
 function drawClass(clazz: ClassData): string {
     let clazzDescription = '[' + clazz.name;
-    if (hasProperties(clazz)) {
-        clazzDescription += '|' + drawClassProperties(clazz.properties);
-    }
-    if (hasMethods(clazz)) {
-        clazzDescription += '|' + drawMethods(clazz.methods);
+    if (hasProperties(clazz) || hasMethods(clazz)) {
+        clazzDescription += '|';
+        if (hasProperties(clazz)) {
+            clazzDescription += drawClassProperties(clazz.properties);
+        }
+        clazzDescription += '|';
+        if (hasMethods(clazz)) {
+            clazzDescription += drawMethods(clazz.methods);
+        }
     }
     return clazzDescription + ']';
 }
@@ -118,6 +122,6 @@ function drawAssociation(association?: RelationType): string {
 }
 
 function findClassNameByKey(key: number, classes?: ClassData[]): string {
-    const found: ClassData | undefined  = classes ? classes.find(clazz => key === clazz.key) : undefined;
+    const found: ClassData | undefined = classes ? classes.find(clazz => key === clazz.key) : undefined;
     return found ? found.name : '';
 }

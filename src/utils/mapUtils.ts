@@ -2,6 +2,11 @@ import { MapEntry } from '../entities/MapEntry';
 
 
 export function mapGet<T>(map: Array<MapEntry<T>>, key: string): T | null {
-    const entryFound: MapEntry<T> | undefined = map.find( entry => entry.key === key );
-    return entryFound ? entryFound.value : null;
+    let value: T | null = null;
+    for(const entry of map) {
+        if(entry.key === key) {
+            value = entry.value;
+        }
+    }
+    return value;
 }

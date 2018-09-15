@@ -10,10 +10,7 @@ const classDiagrammData: Diagramm[] =
                 {
                     key: 1,
                     name: "User",
-                    properties: [
-                      { name: "email", type: "String", visibility: Visibility.PRIVATE },
-                      { name: "password", type: "String", visibility: Visibility.PRIVATE  }
-                    ],
+
                     methods: [
                       { name: "changePassword", parameters: [{ name: "oldPassword", type: "String" }, { name: "newPassword", type: "String" }], visibility: Visibility.PUBLIC }
                     ]
