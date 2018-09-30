@@ -10,7 +10,7 @@ export const fetchApps = () => (dispatch: any) => {
 };
 
 const fetchAppsCompleted = (apps: Application[]) => {
-  apps.forEach(a => a.targets.forEach(t => t.applicationName = a.name));
+  apps.forEach(a => a.targets.forEach(t => { t.applicationName = a.name; t.offline = false }));
   return ({
     type: ActionType.FETCH_APPS_COMPLETED,
     payload: apps,

@@ -1,12 +1,8 @@
 import { MapEntry } from '../entities/MapEntry';
+import { arrayFind } from './arrayUtils';
 
 
 export function mapGet<T>(map: Array<MapEntry<T>>, key: string): T | null {
-    let value: T | null = null;
-    for(const entry of map) {
-        if(entry.key === key) {
-            value = entry.value;
-        }
-    }
-    return value;
+    const entryFound: MapEntry<T> | undefined = arrayFind(map, entry => entry.key === key);
+    return entryFound ? entryFound.value : null;
 }

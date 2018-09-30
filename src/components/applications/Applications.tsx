@@ -3,7 +3,6 @@ import { ApplicationRow } from './ApplicationRow'
 import { Application } from "../../entities/Application";
 import { Target } from "../../entities/Target";
 
-
 interface Props {
     sideWidth: number,
     apps: Application[],

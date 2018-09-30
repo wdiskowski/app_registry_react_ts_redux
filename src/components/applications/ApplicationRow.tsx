@@ -2,6 +2,7 @@ import React from "react";
 import { TargetRows } from './TargetRows'
 import { Application } from "../../entities/Application";
 import { Target } from "../../entities/Target";
+import { arrayFind } from "../../utils/arrayUtils";
 
 
 interface Props {
@@ -15,7 +16,9 @@ interface Props {
 export const ApplicationRow: React.StatelessComponent<Props> = ({ app, activeApp, activeTarget, appSelected, targetSelected }) => {
     return (
         <span key={app.name}>
-            <button className={`w3-button w3-block w3-left-align ${activeApp && app.name === activeApp.name ? 'w3-gray' : ''}`}
+            <button className={`w3-button w3-block w3-left-align ${arrayFind(app.targets, t => !!t.offline) ? 
+                        'w3-text-red' : ''} ${activeApp 
+                            && app.name === activeApp.name ? 'w3-gray' : ''}`}
                 onClick={() => appSelected(app)}>
                 {app.name}
                 {app.targets && !!app.targets.length &&

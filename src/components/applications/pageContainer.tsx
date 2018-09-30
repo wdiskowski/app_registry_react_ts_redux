@@ -8,11 +8,13 @@ import { clearRegistries } from '../registries/actions/clearRegistries';
 import { Applications } from './Applications';
 import { Application } from "../../entities/Application";
 import { Target } from "../../entities/Target";
+import { getSidebarWidth } from "../../utils/configUtils";
 
 const mapStateToProps = (state: State) => ({
     apps: state.apps,
     activeApp: state.activeApp,
-    activeTarget: state.activeTarget
+    activeTarget: state.activeTarget,
+    sideWidth: getSidebarWidth(state.configProperties)
 });
 
 const mapDispatchToProps = (dispatch: any) => ({

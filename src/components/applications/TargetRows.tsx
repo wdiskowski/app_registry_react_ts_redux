@@ -14,7 +14,8 @@ export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeT
         activeApp.targets.map(
             target =>
                 <Link key={target.name} to={`/ApplicationsRegistryWeb/secure/${activeApp.name}/${target.name}`}
-                    className={`w3-bar-item w3-button ${activeTarget 
+                    className={`w3-bar-item w3-button ${target.offline ? 
+                        'w3-text-red' : ''} ${activeTarget 
                         && target.name === activeTarget.name 
                         && activeTarget.applicationName === activeApp.name ?
                         'w3-light-blue' : 'w3-white'}`}

@@ -8,6 +8,7 @@ import { applicationsReducer } from './applications';
 import { targetReducer } from './target';
 import { registryReducer } from './registry';
 import { registriesReducer } from './registries';
+import { configPropertiesReducer } from './configProperties';
 
 
 export interface State {
@@ -16,6 +17,7 @@ export interface State {
     activeTarget: Target | null;
     activeRegistry: Registry | null;
     registryCollection: Array<MapEntry<string>>;
+    configProperties: Array<MapEntry<string>>;
 };
 
 export const state = combineReducers<State>({
@@ -23,5 +25,6 @@ export const state = combineReducers<State>({
     activeApp: applicationReducer,
     activeTarget: targetReducer,
     activeRegistry: registryReducer,
-    registryCollection: registriesReducer
+    registryCollection: registriesReducer,
+    configProperties: configPropertiesReducer
 });

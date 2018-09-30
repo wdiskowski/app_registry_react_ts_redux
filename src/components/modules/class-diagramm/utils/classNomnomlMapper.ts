@@ -6,6 +6,7 @@ import { Property } from "../entities/Property";
 import { Relation } from "../entities/Relation";
 import { RelationType } from "../entities/RelationType";
 import { Visibility } from "../entities/Visibility";
+import { arrayFind } from "../../../../utils/arrayUtils";
 
 export function map(diagramm: Diagramm): string {
     return diagramm && diagramm.classes ? drawDirectives() + '\n' + drawClasses(diagramm.classes) + '\n' + drawRelations(diagramm) : 'loading...';
@@ -122,6 +123,6 @@ function drawAssociation(association?: RelationType): string {
 }
 
 function findClassNameByKey(key: number, classes?: ClassData[]): string {
-    const found: ClassData | undefined = classes ? classes.find(clazz => key === clazz.key) : undefined;
+    const found: ClassData | undefined = classes ? arrayFind(classes, clazz => key === clazz.key) : undefined;
     return found ? found.name : '';
 }

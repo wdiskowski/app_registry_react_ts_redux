@@ -12,3 +12,4 @@ export const targetReducer = (state: Target, action: any) => {
 const handleSelectAppTarget = (state: Target, payload: Target) => {
   return payload;
 };
+

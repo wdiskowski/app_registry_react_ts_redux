@@ -1,7 +1,8 @@
 import { ActionType } from '../../../../constants/ActionType';
 import { Target } from "../../../../entities/Target";
 
-export const fetchData = <T>(target: Target, registryUrl: string, fetchDataImpl: (t: Target, r: string) => Promise<T>, dispatch: any) => {
+export const fetchData = <T>(target: Target, registryUrl: string, fetchDataImpl: (t: Target, r: string)
+  => Promise<T>, dispatch: any) => {
   fetchDataImpl(target, registryUrl)
     .then(registryData => {
       dispatch(fetchDataCompleted(registryData));
