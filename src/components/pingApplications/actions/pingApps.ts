@@ -18,7 +18,9 @@ export const pingApps = (apps: Application[], dispatch: any) => {
         }
       } else {
         pingResults.push(
-          fetch(targ.url).catch(() =>
+          fetch(targ.url + '/registry').then(resp => {
+            if (!resp.ok) { unreachableTargets.push(targ) }
+          }).catch(() =>
             unreachableTargets.push(targ)
           )
         );
