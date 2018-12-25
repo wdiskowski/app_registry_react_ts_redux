@@ -23,11 +23,11 @@ export class Registries extends React.Component<Props, {}> {
         const body = this.props.registriesData.map(entry => modulExists(entry.key) ? <TabPanel key={entry.key}> {getComponent(entry.key)} </TabPanel> : '');
         return (
             <div style={{ marginLeft: this.props.sideWidth }}>
+                <h4 className={'w3-center w3-light-grey'}>{this.props.activeTarget ? `${this.props.activeTarget.applicationName} (${this.props.activeTarget.name})` : ''}</h4>
                 <Tabs selectedTabClassName='w3-light-blue' selectedIndex={this.props.activeRegistryIndex}
                     onSelect={(tabIndex: number) => this.props.registrySelected(tabIndex)}>
                     <TabList>
                         {header}
-                        <sup >{this.props.activeTarget ? `${this.props.activeTarget.applicationName} (${this.props.activeTarget.name})` : ''}</sup>
                     </TabList>
                     {body}
                 </Tabs>

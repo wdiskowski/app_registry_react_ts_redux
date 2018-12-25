@@ -1,5 +1,5 @@
 import { MapEntry } from "../../../../entities/MapEntry";
-import { NamedMap } from "../../common/entities/NamedMap";
+import { NamedMap } from "../../../../entities/NamedMap";
 import { Log } from "../entities/Log";
 import { convertToNamedMapArray } from "../../common/utils/namedMapConverter";
 

@@ -1,6 +1,6 @@
 import dateformat from 'dateformat';
 import { MapEntry } from "../../../../entities/MapEntry";
-import { NamedMap } from "../../common/entities/NamedMap";
+import { NamedMap } from "../../../../entities/NamedMap";
 import { Release } from "../entities/Release";
 import { convertToNamedMapArray } from "../../common/utils/namedMapConverter";
 

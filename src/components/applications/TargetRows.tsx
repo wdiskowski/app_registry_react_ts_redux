@@ -12,16 +12,22 @@ interface Props {
 export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeTarget, targetSelected }) => {
     return <>{
         activeApp.targets.map(
-            target =>
+            target => {
+                const isActiveTarget = activeTarget && target.name === activeTarget.name
+                    && activeTarget.applicationName === activeApp.name;
+                const isCurrentAppInactiveTarget = !!activeTarget && target.name !== activeTarget.name
+                    && activeTarget.applicationName === activeApp.name;
+                return (
                 <Link key={target.name} to={`/ApplicationsRegistryWeb/secure/${activeApp.name}/${target.name}`}
-                    className={`w3-bar-item w3-button ${target.offline ? 
-                        'w3-text-red' : ''} ${activeTarget 
-                        && target.name === activeTarget.name 
-                        && activeTarget.applicationName === activeApp.name ?
-                        'w3-light-blue' : 'w3-white'}`}
+                    className={`w3-bar-item w3-button ${target.offline ?
+                        'w3-text-red' : ''} ${isActiveTarget ?
+                            'w3-light-blue' : 'w3-white'}`}
                     onClick={() => targetSelected(target)}
+                    draggable={isCurrentAppInactiveTarget}
+                    onDragStart={isCurrentAppInactiveTarget ? e => e.dataTransfer.setData('target', JSON.stringify(target)) : undefined}
                 >{target.name}
-                </Link>
+                </Link>)
+            }
         )}
     </>
 }

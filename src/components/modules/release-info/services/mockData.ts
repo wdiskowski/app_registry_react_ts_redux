@@ -1,5 +1,5 @@
 import { MapEntry } from "../../../../entities/MapEntry";
-import { NamedMap } from "../../common/entities/NamedMap";
+import { NamedMap } from "../../../../entities/NamedMap";
 import { Release } from "../entities/Release";
 
 const releaseInfoData: Release =

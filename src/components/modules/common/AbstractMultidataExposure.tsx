@@ -3,13 +3,14 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { Target } from "../../../entities/Target";
 import { Registry } from "../../../entities/Registry";
-import { NamedData } from "./entities/NamedData";
+import { NamedData } from "../../../entities/NamedData";
 
 interface Props {
     activeTarget: Target,
     registryUrl: string,
-    activeRegistry: Registry,
-    fetchData: (target: Target, registryUrl: string) => void
+    activeRegistry: Registry<NamedData>,
+    fetchData: (target: Target, registryUrl: string) => void,
+    comparisonTargetSelected: (target: Target) => void | undefined
 };
 export abstract class AbstractMultidataExposure<T extends NamedData> extends React.Component<Props, {}> {
     
@@ -36,14 +37,14 @@ export abstract class AbstractMultidataExposure<T extends NamedData> extends Rea
         const tabPanels = activeRegistryData.length < 2 ? '' :
             activeRegistryData.map((namedMap, index) =>
                 <TabPanel key={index} >
-                    {this.createDataComponent(namedMap)}
+                    {this.createDataComponent(namedMap, this.props.comparisonTargetSelected)}
                 </TabPanel>
             );
 
 
         return (
             activeRegistryData.length < 2 ?
-                this.createDataComponent(activeRegistryData.length > 0 ? activeRegistryData[0] : null) :
+                this.createDataComponent(activeRegistryData.length > 0 ? activeRegistryData[0] : null, this.props.comparisonTargetSelected) :
                 <Tabs selectedTabClassName={'w3-light-blue'}>
                     <TabList>
                         {tabs}
@@ -52,5 +53,5 @@ export abstract class AbstractMultidataExposure<T extends NamedData> extends Rea
                 </Tabs>);
     }
 
-    protected abstract createDataComponent(namedData: T | null): JSX.Element;
+    protected abstract createDataComponent(namedData: T | null, comparisonTargetSelected?: (target: Target) => void): JSX.Element;
 }

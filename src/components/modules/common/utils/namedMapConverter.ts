@@ -1,5 +1,5 @@
 import { MapEntry } from "../../../../entities/MapEntry";
-import { NamedMap } from "../../common/entities/NamedMap";
+import { NamedMap } from "../../../../entities/NamedMap";
 import { convertToArray } from "../../../../utils/arrayConverter";
 
 export const convertToNamedMapArray = (input: Array<MapEntry<string>> | NamedMap[] | NamedMap | null): NamedMap[] => {

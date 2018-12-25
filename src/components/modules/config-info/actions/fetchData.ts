@@ -5,3 +5,7 @@ import {fetchData as fetchRegistryData } from '../../common/actions/fetchData';
 export const fetchData = (target: Target, registryUrl: string) => (dispatch: any) => {
   fetchRegistryData(target, registryUrl,  (t: Target, r: string) => services.fetchData(t, r), dispatch)
 };
+
+export const fetchComparisonData = (target: Target, registryUrl: string) => (dispatch: any) => {
+  fetchRegistryData(target, registryUrl,  (t: Target, r: string) => services.fetchData(t, r), dispatch, true)
+};

@@ -1,7 +1,9 @@
 import { connect } from 'react-redux';
 import { State } from '../../../reducers';
-import { fetchData } from './actions/fetchData';
-import { MapsExposure } from '../common/MapsExposure';
+import { fetchData, fetchComparisonData } from './actions/fetchData';
+import { selectComparisonTarget } from '../common/actions/selectComparisonTarget';
+import { clearComparisonData } from './actions/clearComparisonData';
+import { ConfigInfos } from './ConfigInfos';
 import { Target } from "../../../entities/Target";
 import { mapGet } from "../../../utils/mapUtils";
 
@@ -10,16 +12,19 @@ const mapStateToProps = (state: State) => {
     return ({
         registryUrl: registryUrlFromMap ? registryUrlFromMap : '',
         activeTarget: state.activeTarget,
-        activeRegistry: state.activeRegistry
+        activeRegistry: state.activeRegistry,
+        comparisonTarget: state.comparisonTarget
     });
 };
 
 
 const mapDispatchToProps = (dispatch: any) => ({
-    fetchData: (target: Target, registryUrl: string) => dispatch(fetchData(target, registryUrl))
+    fetchData: (target: Target, registryUrl: string) => dispatch(fetchData(target, registryUrl)),
+    fetchComparisonData: (target: Target, registryUrl: string) => dispatch(fetchComparisonData(target, registryUrl)),
+    comparisonTargetSelected: (target: Target) => {dispatch(clearComparisonData()); dispatch(selectComparisonTarget(target));}
 });
 
 export const ConfigInfoContainer = connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MapsExposure);
+)(ConfigInfos);

@@ -1,4 +1,5 @@
-export interface Registry {
+export interface Registry<T> {
     index: number,
-    data: any[]
+    data: T[],
+    comparisonData?: T[]
 }
