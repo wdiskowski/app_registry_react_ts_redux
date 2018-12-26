@@ -24,7 +24,7 @@ export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeT
                             'w3-light-blue' : 'w3-white'}`}
                     onClick={() => targetSelected(target)}
                     draggable={isCurrentAppInactiveTarget}
-                    onDragStart={isCurrentAppInactiveTarget ? e => e.dataTransfer.setData('target', JSON.stringify(target)) : undefined}
+                    onDragStart={isCurrentAppInactiveTarget ? e => e.dataTransfer.setData('text', JSON.stringify(target)) : undefined}
                 >{target.name}
                 </Link>)
             }

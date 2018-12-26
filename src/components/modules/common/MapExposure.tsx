@@ -1,4 +1,5 @@
 import React from 'react';
+import { isJson } from '../../../utils/jsonUtils';
 import { abbreviate } from '../../../utils/StringUtils';
 import { MapEntry } from '../../../entities/MapEntry';
 import { Target } from '../../../entities/Target';
@@ -34,8 +35,8 @@ export const MapExposure: React.StatelessComponent<Props> = ({ mapEntries, keyMa
                     <th onDragOver={e => e.preventDefault()}
                         onDrop={e => {
                             e.preventDefault();
-                            const comparisonTarget = e.dataTransfer.getData('target');
-                            if (comparisonTargetSelected && comparisonTarget) { comparisonTargetSelected(JSON.parse(comparisonTarget)) }
+                            const comparisonTarget = e.dataTransfer.getData('text');
+                            if (comparisonTargetSelected && comparisonTarget && isJson(comparisonTarget)) { comparisonTargetSelected(JSON.parse(comparisonTarget)) }
                         }}>
                         Value
                     </th>
