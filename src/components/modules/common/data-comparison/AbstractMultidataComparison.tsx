@@ -1,10 +1,10 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Target } from "../../../entities/Target";
-import { Registry } from "../../../entities/Registry";
-import { NamedData } from "../../../entities/NamedData";
-import { arrayFind } from "../../../utils/arrayUtils";
+import { Target } from "../../../../entities/Target";
+import { Registry } from "../../../../entities/Registry";
+import { NamedData } from "../../../../entities/NamedData";
+import { arrayFind } from "../../../../utils/arrayUtils";
 
 interface Props {
     activeTargetName: string,

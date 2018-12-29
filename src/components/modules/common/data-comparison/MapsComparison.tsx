@@ -1,10 +1,10 @@
 import React from "react";
 import { MapComparison } from './MapComparison';
-import { NamedMap } from "../../../entities/NamedMap";
+import { NamedMap } from "../../../../entities/NamedMap";
 import { mergeMaps } from './utils/comparisonDataSynchronizer';
 import { AbstractMultidataComparison } from "./AbstractMultidataComparison";
-import { Target } from '../../../entities/Target';
-import { MapEntry } from '../../../entities/MapEntry';
+import { Target } from '../../../../entities/Target';
+import { MapEntry } from '../../../../entities/MapEntry';
 
 
 export class MapsComparison extends AbstractMultidataComparison<NamedMap> {

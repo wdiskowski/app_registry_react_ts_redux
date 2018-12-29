@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { State } from '../../../reducers';
 import { fetchData } from './actions/fetchData';
-import { MapsExposure } from '../common/MapsExposure';
+import { MapsExposure } from '../common/data-exposure/MapsExposure';
 import { Target } from "../../../entities/Target";
 import { mapGet } from "../../../utils/mapUtils";
 

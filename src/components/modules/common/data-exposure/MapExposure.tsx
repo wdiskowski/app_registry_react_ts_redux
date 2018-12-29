@@ -1,8 +1,8 @@
 import React from 'react';
-import { isJson } from '../../../utils/jsonUtils';
-import { abbreviate } from '../../../utils/StringUtils';
-import { MapEntry } from '../../../entities/MapEntry';
-import { Target } from '../../../entities/Target';
+import { isJson } from '../../../../utils/jsonUtils';
+import { abbreviate } from '../../../../utils/StringUtils';
+import { MapEntry } from '../../../../entities/MapEntry';
+import { Target } from '../../../../entities/Target';
 
 
 

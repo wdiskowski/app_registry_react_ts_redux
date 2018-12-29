@@ -1,9 +1,9 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { Target } from "../../../entities/Target";
-import { Registry } from "../../../entities/Registry";
-import { NamedData } from "../../../entities/NamedData";
+import { Target } from "../../../../entities/Target";
+import { Registry } from "../../../../entities/Registry";
+import { NamedData } from "../../../../entities/NamedData";
 
 interface Props {
     activeTarget: Target,

@@ -1,6 +1,6 @@
 import { map } from './utils/classNomnomlMapper';
 import { Diagramm } from "./entities/Diagramm";
-import { AbstractNomNomlDiagramm } from "../common/AbstractNomNomlDiagramm";
+import { AbstractNomNomlDiagramm } from "../common/nomnoml-diagramm/AbstractNomNomlDiagramm";
 
 export class ClassDiagramm extends AbstractNomNomlDiagramm<Diagramm> {
 

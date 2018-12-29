@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { State } from '../../../reducers';
 import { fetchData, fetchComparisonData } from './actions/fetchData';
-import { selectComparisonTarget } from '../common/actions/selectComparisonTarget';
+import { selectComparisonTarget } from '../common/data-comparison/actions/selectComparisonTarget';
 import { clearComparisonData } from './actions/clearComparisonData';
 import { ConfigInfos } from './ConfigInfos';
 import { Target } from "../../../entities/Target";

@@ -1,6 +1,6 @@
 import React from "react";
 import { ClassDiagramm } from './ClassDiagramm';
-import { AbstractMultidataExposure } from "../common/AbstractMultidataExposure";
+import { AbstractMultidataExposure } from "../common/data-exposure/AbstractMultidataExposure";
 import { Diagramm } from "./entities/Diagramm";
 
 export class ClassDiagramms extends AbstractMultidataExposure<Diagramm> {

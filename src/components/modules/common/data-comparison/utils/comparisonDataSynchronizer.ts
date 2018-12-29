@@ -1,7 +1,7 @@
-import { MapEntry } from "../../../../entities/MapEntry";
-import { NamedMap } from "../../../../entities/NamedMap";
-import { mapGet } from "../../../../utils/mapUtils";
-import { sort } from "../../../../utils/PropertySorter";
+import { MapEntry } from "../../../../../entities/MapEntry";
+import { NamedMap } from "../../../../../entities/NamedMap";
+import { mapGet } from "../../../../../utils/mapUtils";
+import { sort } from "../../../../../utils/PropertySorter";
 
 export const mergeMaps = (firstMap: NamedMap | null, secondMap: NamedMap | null): Array<MapEntry<Array<string | null>>> => {
     if (!firstMap) {

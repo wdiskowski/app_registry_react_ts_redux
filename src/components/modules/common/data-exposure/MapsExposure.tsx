@@ -1,9 +1,9 @@
 import React from "react";
 import { MapExposure } from './MapExposure';
-import { NamedMap } from "../../../entities/NamedMap";
-import { sort } from '../../../utils/PropertySorter';
+import { NamedMap } from "../../../../entities/NamedMap";
+import { sort } from '../../../../utils/PropertySorter';
 import { AbstractMultidataExposure } from "./AbstractMultidataExposure";
-import { Target } from '../../../entities/Target';
+import { Target } from '../../../../entities/Target';
 
 
 export class MapsExposure extends AbstractMultidataExposure<NamedMap> {

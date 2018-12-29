@@ -2,8 +2,8 @@ import React from "react";
 import { Target } from "../../../entities/Target";
 import { Registry } from "../../../entities/Registry";
 import { NamedData } from "../../../entities/NamedData";
-import { MapsExposure } from "../common/MapsExposure";
-import { MapsComparison } from "../common/MapsComparison";
+import { MapsExposure } from "../common/data-exposure/MapsExposure";
+import { MapsComparison } from "../common/data-comparison/MapsComparison";
 
 interface Props {
     activeTarget: Target,

@@ -1,7 +1,7 @@
 import React from "react";
 import { InvocationStatistic } from './InvocationStatistic';
 import { NamedInvocationStatistic } from "./entities/NamedInvocationStatistic";
-import { AbstractMultidataExposure } from "../common/AbstractMultidataExposure";
+import { AbstractMultidataExposure } from "../common/data-exposure/AbstractMultidataExposure";
 
 export class InvocationStatistics extends AbstractMultidataExposure<NamedInvocationStatistic> {
 
