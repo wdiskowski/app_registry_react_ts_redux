@@ -1,6 +1,6 @@
 import { MapEntry } from "../../../../entities/MapEntry";
 import { NamedMap } from "../../../../entities/NamedMap";
-import { Log } from "../entities/Log";
+
 
 const logInfoData: Array<MapEntry<string>> =
     [
@@ -11,11 +11,11 @@ const logInfoData: Array<MapEntry<string>> =
     ];
 
 
-const logInfoMultiData: Log[] =
+const logInfoMultiData: NamedMap[] =
     [
         {
             name: "MEV",
-            logInfoData: [
+            data: [
                 { key: "JPA_LOG", value: "/var/opt/sun/glassfish/gf-inst1/log/mev/jpa.log" },
                 { key: "WEB_SERVICE_CLIENT_LOG", value: "/var/opt/sun/glassfish/gf-inst1/log/mev/ws.client.log" },
                 { key: "WEB_SERVICE_SERVER_LOG", value: "/var/opt/sun/glassfish/gf-inst1/log/mev/ws.server.log" },
@@ -24,14 +24,14 @@ const logInfoMultiData: Log[] =
         },
         {
             name: "ADAM",
-            logInfoData: [
+            data: [
                 { key: "JPA_LOG", value: "/var/opt/sun/glassfish/gf-inst1/log/adam/jpa.log" },
                 { key: "DEV_LOG", value: "/var/opt/sun/glassfish/gf-inst1/log/adam/adam_dev.log" }
             ]
         }
     ];
 
-export const fetchMockData = (url: string): Array<MapEntry<string>> | NamedMap | NamedMap[] | Log | Log[] | null => {
+export const fetchMockData = (url: string): Array<MapEntry<string>> | NamedMap | NamedMap[] | null => {
     return url.indexOf("ex092vm") > -1 ? logInfoData : logInfoMultiData;
 }
 
