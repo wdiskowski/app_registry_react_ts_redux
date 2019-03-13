@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from 'react-router-dom'
 import { Application } from "../../entities/Application";
 import { Target } from "../../entities/Target";
 
@@ -18,7 +17,7 @@ export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeT
                 const isCurrentAppInactiveTarget = !!activeTarget && target.name !== activeTarget.name
                     && activeTarget.applicationName === activeApp.name;
                 return (
-                <Link key={target.name} to={`/ApplicationsRegistryWeb/secure/${activeApp.name}/${target.name}`}
+                <span key={target.name} 
                     className={`w3-bar-item w3-button ${target.offline ?
                         'w3-text-red' : ''} ${isActiveTarget ?
                             'w3-light-blue' : 'w3-white'}`}
@@ -26,7 +25,7 @@ export const TargetRows: React.StatelessComponent<Props> = ({ activeApp, activeT
                     draggable={isCurrentAppInactiveTarget}
                     onDragStart={isCurrentAppInactiveTarget ? e => e.dataTransfer.setData('text', JSON.stringify(target)) : undefined}
                 >{target.name}
-                </Link>)
+                </span>)
             }
         )}
     </>
