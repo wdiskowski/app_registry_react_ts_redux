@@ -9,7 +9,7 @@ import { modulExists, getComponent } from '../modules/common/utils/componentFact
 
 interface Props {
     sideWidth: number,
-    activeApp: Application | null,
+    activeTargetParentApp?: Application,
     activeTarget: Target | null,
     activeRegistryIndex: number,
     registriesData: Array<MapEntry<string>>,
@@ -23,7 +23,8 @@ export class Registries extends React.Component<Props, {}> {
         const body = this.props.registriesData.map(entry => modulExists(entry.key) ? <TabPanel key={entry.key}> {getComponent(entry.key)} </TabPanel> : '');
         return (
             <div style={{ marginLeft: this.props.sideWidth }}>
-                <h4 className={'w3-center w3-light-grey'}>{this.props.activeApp && this.props.activeTarget ? `${this.props.activeApp.title ? this.props.activeApp.title : this.props.activeApp.name} (${this.props.activeTarget.name})` : ''}</h4>
+               
+               <h4 className={'w3-center w3-light-grey'}>{this.props.activeTarget ? `${this.props.activeTargetParentApp ? this.props.activeTargetParentApp.title ? this.props.activeTargetParentApp.title : this.props.activeTargetParentApp.name : this.props.activeTarget.applicationName} (${this.props.activeTarget.name})` : ''}</h4>
                 <Tabs selectedTabClassName='w3-light-blue' selectedIndex={this.props.activeRegistryIndex}
                     onSelect={(tabIndex: number) => this.props.registrySelected(tabIndex)}>
                     <TabList>

@@ -6,9 +6,10 @@ import { clearComparisonTarget } from '../common/actions/clearComparisonTarget';
 import { Registries } from './Registries';
 import { Target } from "../../entities/Target";
 import { getSidebarWidth } from "../../utils/configUtils";
+import { arrayFind } from "../../utils/arrayUtils";
 
 const mapStateToProps = (state: State) => ({
-    activeApp: state.activeApp,
+    activeTargetParentApp: state.activeTarget ? arrayFind(state.apps, app => !!state.activeTarget && app.name === state.activeTarget.applicationName) : undefined,
     activeTarget: state.activeTarget,
     activeRegistryIndex: state.activeRegistry ? state.activeRegistry.index : 0,
     registriesData: state.registryCollection,
