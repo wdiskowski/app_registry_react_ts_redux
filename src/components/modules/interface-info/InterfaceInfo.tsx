@@ -20,7 +20,11 @@ export const InterfaceInfo: React.StatelessComponent<Props> = ({ interfaceItems,
         interfaceItem =>
             <tr key={interfaceItem.name}>
                 <td title={interfaceItem.description}>{abbreviate(interfaceItem.name, keyMaxDisplaySize ? keyMaxDisplaySize : DEFAULT_KEY_MAX_DISPLAY_SIZE)}</td>
-                <td title={interfaceItem.url}>{abbreviate(interfaceItem.url, valueMaxDisplaySize ? valueMaxDisplaySize : DEFAULT_VALUE_MAX_DISPLAY_SIZE)}</td>
+                <td title={interfaceItem.url}>
+                    <a href={interfaceItem.url} target="_blank" rel="noopener">
+                        {abbreviate(interfaceItem.url, valueMaxDisplaySize ? valueMaxDisplaySize : DEFAULT_VALUE_MAX_DISPLAY_SIZE)}
+                    </a>
+                </td>
             </tr>
     )
 

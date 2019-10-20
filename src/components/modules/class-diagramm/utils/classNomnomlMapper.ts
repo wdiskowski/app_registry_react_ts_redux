@@ -116,11 +116,11 @@ function drawAssociation(association?: RelationType): string {
     let associationSign = '-';
     switch (association) {
         case RelationType.AGGREGATION: associationSign += 'o'; break;
-        case RelationType.COMPOSITION: associationSign += '+'; break;
-        case RelationType.GENERALIZATION: associationSign += ':>'; break;
         case RelationType.ASSOCIATION: break;
-        case RelationType.NAVIGABLE_ASSOCIATION: associationSign += '>'; break;
+        case RelationType.COMPOSITION: associationSign += '+'; break;
         case RelationType.DEPENDENCY: associationSign += '->'; break;
+        case RelationType.GENERALIZATION: associationSign += ':>'; break;
+        case RelationType.NAVIGABLE_ASSOCIATION: associationSign += '>'; break;
         case RelationType.REALISATION: associationSign += '-:>'; break;
     }
     return associationSign;
